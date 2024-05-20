@@ -9,6 +9,18 @@
     <h1>Checkout</h1>
     <p>Спасибо за ваш заказ. Пожалуйста, подтвердите детали ниже и нажмите "Подтвердить заказ" для завершения.</p>
     <!-- Детали заказа и кнопка подтверждения -->
-    <button class="btn btn-primary">Подтвердить заказ</button>
+    <button class="btn btn-primary" onclick="generateRandomNumber()">Подтвердить заказ</button>
+    <p id="random-number"></p>
 </div>
+{% endblock %}
+
+{% block script %}
+<script>
+    function generateRandomNumber() {
+        // Генерация случайного числа от 1 до 100
+        var randomNumber = Math.floor(Math.random() * 100) + 1;
+        // Отображение случайного числа в элементе с id "random-number"
+        document.getElementById('random-number').innerText = "Случайное число: " + randomNumber;
+    }
+</script>
 {% endblock %}
